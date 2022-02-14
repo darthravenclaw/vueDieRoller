@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Die Roller</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <div id="main" v-show="showMain">
+        <header>
+          <h2>Simple Die Roller</h2>
+          <p>made in Vue</p>
+        </header>
+        <div class="explination">
+          <button @click="showToggle">{{expShow}}</button>
+          <p v-show="expShow == 'Hide Description'">
+            This is just a simple die roller that I create to test out the Vue
+            framework. It allows rolling multiple dice and choosing the highest
+            number or the total. If you roll highest, dice that roll the maximum
+            number will be rolled again and added to the total.
+          </p>
+        </div>
+        <div class="allDiceContainer">
+          <div class="buttonContainer" v-for="die in dice">
+            <div class="dieDiv">{{die.count}}</div>
+            <button @click="upDie(die.name)" class="upbtn">Up</button>
+            <div class="dieName">{{die.name}}</div>
+            <button @click="downDie(die.name)" class="downbtn">Down</button>
+          </div>
+        </div>
+        <div class="allButtonsContainer">
+          <button @click="rollDiceTotal">Roll for Total</button>
+          <button @click="rollDiceHigh">Roll for High</button>
+          <button @click="addCustomDieDialog">Add Custom Die</button>
+          <div class="results" v-html="getResults()"></div>
+        </div>
+      </div>
+      <div class="newDieCard" v-show="!showMain">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" v-model="newDieName" />
+        <label for="name">Number of sides</label>
+        <input type="text" name="value" id="value" v-model="newDieValue" />
+        <button @click="addDie">Add Die</button>
+        <button @click="cancel">Cancel</button>
+      </div>
+    </div>
+  </body>
+</html>

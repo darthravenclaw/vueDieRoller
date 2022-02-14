@@ -1,0 +1,84 @@
+root {
+  --color-base: 196;
+}
+header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0.2em;
+  padding: 0.2em;
+  height: auto;
+}
+h2 {
+  margin: 0;
+}
+header > p {
+  font-size: 1rem;
+}
+.newDieCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 200px;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+body {
+  height: 100vh;
+  font-size: 1.4rem;
+  background-color: hsl(196, 50%, 80%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid hsla(196, 50%, 50%, 40%);
+  min-width: 2em;
+
+  height: 5em;
+}
+.allButtonsContainer {
+  margin: 0.4em;
+  height: auto;
+}
+.resultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.result {
+  width: 3em;
+}
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.allDiceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2em;
+}
+.allButtonsContainer > button {
+  margin: 0.2em;
+}
+.dieName {
+  padding: 0.3em;
+}
+button {
+  border: 0;
+  width: 100%;
+  height: 2em;
+  font-size: 1rem;
+}
